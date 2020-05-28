@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'phaser';
 import splashScreen from '../assets/katkat_logo.png';
 
