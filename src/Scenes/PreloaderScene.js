@@ -10,6 +10,10 @@ import gametitleLogo from '../assets/gameLogo.png';
 import box from '../assets/ui/grey_box.png';
 import checkedBox from '../assets/ui/blue_boxCheckmark.png';
 import bgMusic from '../assets/TownTheme.mp3';
+import platform from '../assets/platform.png';
+import player from '../assets/player.png';
+import coin from '../assets/coin.png';
+
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -94,15 +98,44 @@ export default class PreloaderScene extends Phaser.Scene {
     );
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
-
+    this.load.spritesheet('player', player, {
+      frameWidth: 50,
+      frameHeight: 51,
+    });
+    this.load.spritesheet('coin', coin, {
+      frameWidth: 20,
+      frameHeight: 20,
+    });
     this.load.image('gameLogo', gametitleLogo);
     this.load.image('blueButton1', blueButton1);
     this.load.image('blueButton2', blueButton2);
     this.load.image('phaserLogo', phaserLogo);
     this.load.image('checkedBox', checkedBox);
+    this.load.image('platform', platform);
     this.load.image('box', box);
     this.load.audio('bgMusic', [bgMusic]);
   }
 
-  create() {}
+  create() {
+    this.anims.create({
+      key: 'run',
+      frames: this.anims.generateFrameNumbers('player', {
+        start: 4,
+        end: 7,
+      }),
+      frameRate: 20,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'rotate',
+      frames: this.anims.generateFrameNumbers('coin', {
+        start: 0,
+        end: 5,
+      }),
+      frameRate: 15,
+      yoyo: true,
+      repeat: -1,
+    });
+  }
 }
