@@ -126,7 +126,7 @@ export default class GameScene extends Phaser.Scene {
     }
   }
 
-  // end add platform
+
   jump() {
     if (this.player.body.touching.down || (this.playerJumps > 0 && this.playerJumps < gameOptions.jumps)) {
       if (this.player.body.touching.down) {
@@ -135,6 +135,44 @@ export default class GameScene extends Phaser.Scene {
       this.player.setVelocityY(gameOptions.jumpForce * -1);
       this.playerJumps++;
       this.player.anims.stop();
+    }
+  }
+
+  update() {
+    if (this.player.y > config.height) {
+      this.scene.start('PlayGame');
+    }
+    this.player.x = gameOptions.playerStartPosition;
+
+    let minDistance = config.width;
+    let rightmostPlatformHeight = 0;
+    this.platformGroup.getChildren().forEach((platform) => {
+      const platformDistance = config.width - platform.x - platform.displayWidth / 2;
+      if (platformDistance < minDistance) {
+        minDistance = platformDistance;
+        rightmostPlatformHeight = platform.y;
+      }
+      if (platform.x < -platform.displayWidth / 2) {
+        this.platformGroup.killAndHide(platform);
+        this.platformGroup.remove(platform);
+      }
+    }, this);
+
+    this.coinGroup.getChildren().forEach((coin) => {
+      if (coin.x < -coin.displayWidth / 2) {
+        this.coinGroup.killAndHide(coin);
+        this.coinGroup.remove(coin);
+      }
+    }, this);
+
+    if (minDistance > this.nextPlatformDistance) {
+      const nextPlatformWidth = Phaser.Math.Between(gameOptions.platformSizeRange[0], gameOptions.platformSizeRange[1]);
+      const platformRandomHeight = gameOptions.platformHeighScale * Phaser.Math.Between(gameOptions.platformHeightRange[0], gameOptions.platformHeightRange[1]);
+      const nextPlatformGap = rightmostPlatformHeight + platformRandomHeight;
+      const minPlatformHeight = config.height * gameOptions.platformVerticalLimit[0];
+      const maxPlatformHeight = config.height * gameOptions.platformVerticalLimit[1];
+      const nextPlatformHeight = Phaser.Math.Clamp(nextPlatformGap, minPlatformHeight, maxPlatformHeight);
+      this.addPlatform(nextPlatformWidth, config.width + nextPlatformWidth / 2, nextPlatformHeight);
     }
   }
 }
