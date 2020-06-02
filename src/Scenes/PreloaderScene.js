@@ -12,7 +12,7 @@ import checkedBox from '../assets/ui/blue_boxCheckmark.png';
 import bgMusic from '../assets/TownTheme.mp3';
 import platform from '../assets/platform.png';
 import player from '../assets/player.png';
-import coin from '../assets/coin.png';
+import crystal from '../assets/crystal.png';
 import gameOver from '../assets/gameOver.png';
 import form from '../assets/form.html';
 
@@ -104,9 +104,9 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 50,
       frameHeight: 51,
     });
-    this.load.spritesheet('coin', coin, {
-      frameWidth: 20,
-      frameHeight: 20,
+    this.load.spritesheet('crystal', crystal, {
+      frameWidth: 32,
+      frameHeight: 32,
     });
     this.load.image('gameLogo', gametitleLogo);
     this.load.image('blueButton1', blueButton1);
@@ -133,9 +133,9 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.anims.create({
       key: 'rotate',
-      frames: this.anims.generateFrameNumbers('coin', {
+      frames: this.anims.generateFrameNumbers('crystal', {
         start: 0,
-        end: 5,
+        end: 7,
       }),
       frameRate: 15,
       yoyo: true,
