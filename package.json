@@ -36,6 +36,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
     "phaser": "^3.23.0",
     "phaser3-rex-plugins": "^1.1.18",
     "style-loader": "^1.2.1"

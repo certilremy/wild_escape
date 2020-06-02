@@ -14,8 +14,8 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
     gameOptions.score = 0;
+    scoreText = this.add.text(16, 16, `coleted:${gameOptions.score}`, { fontSize: '32px', fill: '#000' });
     this.addedPlatforms = 0;
     this.platformGroup = this.add.group({
       removeCallback(platform) {
@@ -74,9 +74,9 @@ export default class GameScene extends Phaser.Scene {
           callbackScope: this,
           onComplete() {
             this.coinGroup.killAndHide(coin);
-            gameOptions.score += 1;
             this.coinGroup.remove(coin);
-            scoreText.setText(`Score: ${gameOptions.score}`);
+            gameOptions.score += 1;
+            scoreText.setText(`Colected: ${gameOptions.score}`);
           },
         });
       },
@@ -84,6 +84,7 @@ export default class GameScene extends Phaser.Scene {
       this,
     );
     this.input.on('pointerdown', this.jump, this);
+    // end create
   }
 
   addPlatform(platformWidth, posX, posY) {
@@ -185,7 +186,7 @@ function resize() {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   const windowRatio = windowWidth / windowHeight;
-  const gameRatio = game.config.width / game.config.height;
+  const gameRatio = config.width / config.height;
   if (windowRatio < gameRatio) {
     canvas.style.width = `${windowWidth}px`;
     canvas.style.height = `${windowWidth / gameRatio}px`;
