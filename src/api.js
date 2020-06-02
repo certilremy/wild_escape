@@ -12,7 +12,20 @@ const api = (() => {
     }
   };
 
-  return { getScore };
+  const postScore = async (name, score) => {
+    axios.post(url, {
+      user: name,
+      score,
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  return { getScore, postScore };
 })();
 
 export default api;
