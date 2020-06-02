@@ -58,6 +58,7 @@ export default class TitleScene extends Phaser.Scene {
       fontSize: '32px',
       fill: '#fff',
     });
+
     this.centerButtonText(this.optionsText, this.optionsButton);
 
     this.optionsButton.on('pointerdown', (pointer) => {

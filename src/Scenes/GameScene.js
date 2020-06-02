@@ -6,6 +6,7 @@ import 'phaser';
 import gameOptions from '../config/gameOptions';
 import config from '../config/config';
 
+let scoreText;
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -13,6 +14,8 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
+    scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
+    gameOptions.score = 0;
     this.addedPlatforms = 0;
     this.platformGroup = this.add.group({
       removeCallback(platform) {
@@ -71,7 +74,9 @@ export default class GameScene extends Phaser.Scene {
           callbackScope: this,
           onComplete() {
             this.coinGroup.killAndHide(coin);
+            gameOptions.score += 1;
             this.coinGroup.remove(coin);
+            scoreText.setText(`Score: ${gameOptions.score}`);
           },
         });
       },
@@ -79,7 +84,6 @@ export default class GameScene extends Phaser.Scene {
       this,
     );
     this.input.on('pointerdown', this.jump, this);
-    // end create
   }
 
   addPlatform(platformWidth, posX, posY) {

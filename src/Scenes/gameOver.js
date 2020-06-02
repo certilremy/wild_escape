@@ -48,6 +48,21 @@ export default class gameOver extends Phaser.Scene {
     this.input.on('pointerout', (event, gameObjects) => {
       gameObjects[0].setTexture('blueButton1');
     });
+    this.LeaderBoradButton = this.add
+      .sprite(300, 200, 'blueButton1')
+      .setInteractive();
+    this.centerButton(this.LeaderBoradButton);
+
+    this.leaderBoardText = this.add.text(0, 0, 'Leader board', {
+      fontSize: '20px',
+      fill: '#fff',
+    });
+
+    this.centerButtonText(this.leaderBoardText, this.LeaderBoradButton);
+
+    this.LeaderBoradButton.on('pointerdown', (pointer) => {
+      this.scene.start('leaderBoard');
+    });
 
     this.model = this.sys.game.globals.model;
     if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
