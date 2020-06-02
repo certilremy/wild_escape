@@ -30,7 +30,12 @@ module.exports = {
     },{
       test: /\.mp3$/,
       loader: 'file-loader',
-    },{
+    },
+    {
+      test: /\.html$/i,
+      loader: 'html-loader',
+    },
+    {
       test: /\.css$/i,
       use: ['style-loader', 'css-loader'],
     }, {
