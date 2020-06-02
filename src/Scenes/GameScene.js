@@ -5,6 +5,8 @@
 import 'phaser';
 import gameOptions from '../config/gameOptions';
 import config from '../config/config';
+import api from '../api';
+
 
 let scoreText;
 
@@ -146,6 +148,7 @@ export default class GameScene extends Phaser.Scene {
   update() {
     if (this.player.y > config.height) {
       this.scene.start('gameOver');
+      api.postScore(gameOptions.playerName, gameOptions.score);
     }
     this.player.x = gameOptions.playerStartPosition;
 

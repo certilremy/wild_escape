@@ -1,16 +1,21 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-console */
 
 import axios from 'axios';
 
 const api = (() => {
-  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/DFnP8PNapygyBUOEaX7x/scores/';
+  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/GW1RVxtyH2SruGPOA6w3/scores/';
+  // const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/DFnP8PNapygyBUOEaX7x/scores/';
   const getScore = async () => {
     try {
       const response = await axios.get(url);
       const scoreList = response.data.result;
+      return scoreList;
     } catch (error) {
       console.error(error);
     }
   };
+
 
   const postScore = async (name, score) => {
     axios.post(url, {
