@@ -3,7 +3,6 @@
 import 'phaser';
 import InputText from 'phaser3-rex-plugins/plugins/inputtext';
 import gameOptions from '../config/gameOptions';
-import config from '../config/config';
 
 
 export default class nameScene extends Phaser.Scene {
@@ -30,13 +29,15 @@ export default class nameScene extends Phaser.Scene {
         border: 1,
         borderColor: '#ffff',
       })
-      .resize(400, 100)
-      .on('textchange', inputText => {
-        if (/^[a-z]+$/g.test(inputText.text)) {
-          info.text = 'Valid name';
-        } else {
-          info.text = 'This kind of name is not alowed!';
-        }
-      });
+      .resize(400, 100);
+
+    this.input.keyboard.addKey('ENTER').on('down', () => {
+      if (inputText.text === '') {
+        info.text = 'empty name not alowed!';
+      } else {
+        gameOptions.playerName = inputText.text.trim();
+        this.scene.start('Title');
+      }
+    });
   }
 }
