@@ -13,6 +13,7 @@ import bgMusic from '../assets/TownTheme.mp3';
 import platform from '../assets/platform.png';
 import player from '../assets/player.png';
 import coin from '../assets/coin.png';
+import gameOver from '../assets/gameOver.png';
 
 
 export default class PreloaderScene extends Phaser.Scene {
@@ -113,6 +114,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('checkedBox', checkedBox);
     this.load.image('platform', platform);
     this.load.image('box', box);
+    this.load.image('gameOver', gameOver);
     this.load.audio('bgMusic', [bgMusic]);
   }
 
