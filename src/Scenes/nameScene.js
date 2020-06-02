@@ -12,7 +12,7 @@ export default class nameScene extends Phaser.Scene {
   }
 
   create() {
-    const info = this.add.text(400, 200, 'Enter your name', {
+    const info = this.add.text(400, 200, 'Enter your name then press enter', {
       fontSize: 30,
       fixedWidth: 800,
       fixedHeight: 100,
@@ -21,12 +21,14 @@ export default class nameScene extends Phaser.Scene {
     }).setOrigin(0.5);
 
     const inputText = this.add
-      .rexInputText(400, 250, 10, 10, {
+      .rexInputText(500, 290, 10, 10, {
         type: 'text',
-        placeholder: 'username',
+        placeholder: 'your name here',
         fontSize: '24px',
-        color: '#A9A9A9',
+        color: '#ffffff',
         align: 'center',
+        border: 1,
+        borderColor: '#ffff',
       })
       .resize(400, 100)
       .on('textchange', inputText => {
