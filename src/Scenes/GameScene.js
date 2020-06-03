@@ -2,6 +2,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 import 'phaser';
 import gameOptions from '../config/gameOptions';
 import config from '../config/config';

@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 import 'phaser';
 import css from './style.css';
 import config from './config/config';

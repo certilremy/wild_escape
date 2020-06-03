@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 import 'phaser';
 import api from '../api';
 

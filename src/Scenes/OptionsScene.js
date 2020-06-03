@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 import 'phaser';
 
 export default class OptionsScene extends Phaser.Scene {

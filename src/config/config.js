@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 import 'phaser';
 
 export default {

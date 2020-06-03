@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable func-names */
 /* eslint-disable no-unused-expressions */
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 import 'phaser';
 import config from '../config/config';
 

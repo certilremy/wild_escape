@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
 /* eslint-disable radix */
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 import 'phaser';
 import blueButton1 from '../assets/ui/blue_button02.png';
 import blueButton2 from '../assets/ui/blue_button03.png';
