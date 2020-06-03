@@ -9,8 +9,8 @@ const api = (() => {
   const getScore = async () => {
     try {
       const response = await axios.get(url);
-      const scoreList = response.data.result;
-      return scoreList;
+      const scoreList = response.data.result.sort((a, b) => b.score - a.score);
+      return scoreList.slice(0, 10);
     } catch (error) {
       console.error(error);
     }

@@ -13,6 +13,7 @@ import CreditsScene from './Scenes/CreditsScene';
 import nameScene from './Scenes/nameScene';
 import leaderBoard from './Scenes/leaderBoard';
 import Model from './model';
+import api from './api';
 
 class Game extends Phaser.Game {
   constructor() {
@@ -32,4 +33,5 @@ class Game extends Phaser.Game {
   }
 }
 
+api.getScore();
 window.game = new Game();
