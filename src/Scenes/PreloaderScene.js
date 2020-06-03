@@ -14,7 +14,7 @@ import platform from '../assets/platform.png';
 import player from '../assets/player.png';
 import crystal from '../assets/crystal.png';
 import gameOver from '../assets/gameOver.png';
-import form from '../assets/form.html';
+import sky from '../assets/sky.png';
 
 
 export default class PreloaderScene extends Phaser.Scene {
@@ -117,7 +117,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('box', box);
     this.load.image('gameOver', gameOver);
     this.load.audio('bgMusic', [bgMusic]);
-    this.load.html('nameform', form);
+    this.load.image('sky', sky);
   }
 
   create() {

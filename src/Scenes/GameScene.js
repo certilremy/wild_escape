@@ -17,6 +17,7 @@ export default class GameScene extends Phaser.Scene {
 
   create() {
     gameOptions.score = 0;
+    this.add.image(0, 0, 'sky');
     scoreText = this.add.text(16, 16, `Score:${gameOptions.score}`, { fontSize: '32px', fill: '#000' });
     this.addedPlatforms = 0;
     this.platformGroup = this.add.group({
