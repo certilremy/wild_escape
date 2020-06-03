@@ -13,6 +13,7 @@ import OptionsScene from './Scenes/OptionsScene';
 import CreditsScene from './Scenes/CreditsScene';
 import nameScene from './Scenes/nameScene';
 import leaderBoard from './Scenes/leaderBoard';
+import Help from './Scenes/helpScene';
 import Model from './model';
 
 class Game extends Phaser.Game {
@@ -20,6 +21,7 @@ class Game extends Phaser.Game {
     super(config);
     const model = new Model();
     this.globals = { model, bgMusic: null };
+    this.scene.add('Help', Help);
     this.scene.add('Boot', BootScene);
     this.scene.add('nameScene', nameScene);
     this.scene.add('gameOver', gameOver);

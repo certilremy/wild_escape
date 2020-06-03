@@ -71,6 +71,17 @@ export default class TitleScene extends Phaser.Scene {
       .setInteractive();
     this.centerButton(this.creditsButton, -1);
 
+    this.helpButton = this.add
+      .sprite(300, 200, 'blueButton1')
+      .setInteractive();
+    this.centerButton(this.helpButton, -2);
+
+    this.helpText = this.add.text(0, 0, 'Help', {
+      fontSize: '32px',
+      fill: '#fff',
+    });
+    this.centerButtonText(this.helpText, this.helpButton);
+
     this.creditsText = this.add.text(0, 0, 'Credits', {
       fontSize: '32px',
       fill: '#fff',
@@ -79,6 +90,10 @@ export default class TitleScene extends Phaser.Scene {
 
     this.creditsButton.on('pointerdown', (pointer) => {
       this.scene.start('Credits');
+    });
+
+    this.helpButton.on('pointerdown', (pointer) => {
+      this.scene.start('Help');
     });
 
     this.input.on('pointerover', (event, gameObjects) => {
