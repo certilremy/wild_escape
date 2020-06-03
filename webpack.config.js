@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 const webpack = require('webpack');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -27,7 +29,8 @@ module.exports = {
           outputPath: 'assets'
         }
       }
-    },{
+    },
+    {
       test: /\.(mp3|wav|wma|ogg)$/,
       loader: 'file-loader',
     },
