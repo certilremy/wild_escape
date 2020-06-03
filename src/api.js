@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable consistent-return */
 /* eslint-disable no-console */
 
@@ -23,10 +24,9 @@ const api = (() => {
       score,
     })
       .then((response) => {
-        console.log(response);
+
       })
       .catch((error) => {
-        console.log(error);
       });
   };
 

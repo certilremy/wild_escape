@@ -28,7 +28,7 @@ module.exports = {
         }
       }
     },{
-      test: /\.mp3$/,
+      test: /\.(mp3|wav|wma|ogg)$/,
       loader: 'file-loader',
     },
     {

@@ -9,7 +9,7 @@ import phaserLogo from '../assets/logo.png';
 import gametitleLogo from '../assets/gameLogo.png';
 import box from '../assets/ui/grey_box.png';
 import checkedBox from '../assets/ui/blue_boxCheckmark.png';
-import bgMusic from '../assets/TownTheme.mp3';
+import bgMusic from '../assets/upbeatz.mp3';
 import platform from '../assets/platform.png';
 import player from '../assets/player.png';
 import crystal from '../assets/crystal.png';

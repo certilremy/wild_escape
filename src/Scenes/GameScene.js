@@ -17,7 +17,7 @@ export default class GameScene extends Phaser.Scene {
 
   create() {
     gameOptions.score = 0;
-    scoreText = this.add.text(16, 16, `coleted:${gameOptions.score}`, { fontSize: '32px', fill: '#000' });
+    scoreText = this.add.text(16, 16, `Score:${gameOptions.score}`, { fontSize: '32px', fill: '#000' });
     this.addedPlatforms = 0;
     this.platformGroup = this.add.group({
       removeCallback(platform) {
@@ -78,7 +78,7 @@ export default class GameScene extends Phaser.Scene {
             this.coinGroup.killAndHide(coin);
             this.coinGroup.remove(coin);
             gameOptions.score += 1;
-            scoreText.setText(`Colected: ${gameOptions.score}`);
+            scoreText.setText(`Score: ${gameOptions.score}`);
           },
         });
       },
@@ -86,7 +86,6 @@ export default class GameScene extends Phaser.Scene {
       this,
     );
     this.input.on('pointerdown', this.jump, this);
-    // end create
   }
 
   addPlatform(platformWidth, posX, posY) {
