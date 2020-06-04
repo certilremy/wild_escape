@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-empty */
 /* eslint-disable no-unused-vars */
 /* eslint-disable consistent-return */
@@ -12,6 +13,7 @@ const api = (() => {
       const scoreList = response.data.result.sort((a, b) => b.score - a.score);
       return scoreList.slice(0, 10);
     } catch (error) {
+      console.log(error);
     }
   };
 
@@ -21,10 +23,8 @@ const api = (() => {
       user: name,
       score,
     })
-      .then((response) => {
-
-      })
       .catch((error) => {
+        console.log(error);
       });
   };
 
