@@ -8,7 +8,7 @@ Endless runner game made using phaser.io
 
 Build in 7 days. I've supposed to build it in 5 days, I've been robbed I lost my mobile wifi and my laptop but this obstacle won't stop me finish the game. In the first 2 days, I started learning phaser and arcade physics. Then I started designing the game logic. The idea was to make an endless runner game where you the player are trying to escape for something.
 
-While you're escaping you need to collect some jewelry the score is based on the position you catch the Jewell. On the fourth day I started programming the game in the afternoon I've been robbed. Now I've only one day to submit the game I could send an email to microverse telling them that I want to stop to the capstone project because of the situation. Nope, I decided to challenge myself I get another computer then I start working on Monday And now here's the . My initial objectives were to create an endless runner like Temple run 2D, unfortunately, I didn't complete my objectives.
+While you're escaping you need to collect some jewelry the score is based on the position you catch the Jewell. On the fourth day I started programming the game in the afternoon I've been robbed. Now I've only one day to submit the game I could send an email to microverse telling them that I want to stop to the capstone project because of the situation. Nope, I decided to challenge myself I get another computer then I start working on Monday. My initial objectives were to create an endless runner like Temple run 2D, unfortunately, I didn't complete my objectives.
 
 ### You can test the live version of the app here:
  https://wildescape.netlify.app/ 
