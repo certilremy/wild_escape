@@ -20,7 +20,7 @@ export default class leaderBoard extends Phaser.Scene {
     });
     let position = 60;
     const displayPlayers = async () => {
-      const scoreList = await api.getScore();
+      const scoreList = await api.getScore(api.url);
       scoreList.forEach((element) => {
         this.text = this.add.text(150, position, `Name: ${element.user}    score:${element.score}`, { fontSize: 30, fill: '#fff' });
         position += 40;

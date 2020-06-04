@@ -19,3 +19,28 @@ test('Coin percent', () => {
 test('Platform heigh scale', () => {
   expect(gameOption.platformHeighScale).toEqual(20);
 });
+
+test('Player name should be empy when game start', () => {
+  expect(gameOption.playerName).toEqual('');
+});
+
+test('Store player name if given', () => {
+  gameOption.playerName = 'Certil';
+  expect(gameOption.playerName).toEqual('Certil');
+});
+
+test('Store player name if given', () => {
+  expect(gameOption.spawnRange).toEqual([80, 300]);
+});
+
+test('Platform speed range', () => {
+  expect(gameOption.platformSpeedRange).toEqual([300, 300]);
+});
+
+test('Platform speed range', () => {
+  expect(gameOption.platformVerticalLimit).toEqual([0.4, 0.8]);
+});
+
+test('Platform speed range', () => {
+  expect(gameOption.playerStartPosition).toEqual(200);
+});

@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const api = (() => {
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/DFnP8PNapygyBUOEaX7x/scores/';
-  const getScore = async () => {
+  const getScore = async (url) => {
     try {
       const response = await axios.get(url);
       const scoreList = response.data.result.sort((a, b) => b.score - a.score);
